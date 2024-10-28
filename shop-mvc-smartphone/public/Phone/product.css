@@ -1,0 +1,278 @@
+.w-22{
+    width: 23%;
+}
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.w-100{
+    width: 100%;
+}
+.mb-3{
+    margin-bottom: 1rem;
+}
+@media screen and (max-width: 500px) {
+    html{
+        font-size: 10px;
+    }
+}
+.page-product .product-top{
+    position: relative;
+}
+.page-product .product-sale{
+    position: absolute;
+    background-color: red;
+    padding: 6px 10px;
+    border-radius: 4px;
+    top: 2rem;
+    left: 2rem;
+}
+.page-product .product-item{
+    position: relative;
+}
+.page-product .product-mid{
+    position: absolute;
+    top: 65%;
+    left: 0;
+    display: none;
+}
+.page-product .product-mid button{
+    padding: 0.5rem;
+}
+@keyframes example{
+    from{
+        left: 0;
+        top: 70%;
+    }
+    to{
+        top: 65%;
+    }
+}
+.hover-text {
+    color: initial; /* Màu chữ ban đầu */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu */
+}
+/* Ẩn phần nội dung profile khi chưa hover */
+.profile-dropdown-content {
+    display: none;
+}
+
+/* Hiển thị nội dung khi hover vào ảnh đại diện */
+.nav-item.dropdown:hover .profile-dropdown-content {
+    display: block;
+}
+
+.dropdown-menu {
+    padding: 10px;
+}
+
+/* Nếu muốn thêm hiệu ứng mượt mà */
+.nav-item.dropdown:hover .profile-dropdown-content {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.hover-text:hover {
+    color: white; /* Màu chữ khi hover */
+}
+
+.page-product .product-bot{
+    text-align: center;
+}
+.page-product .product-item:hover .product-mid{
+    display: block;
+    animation-name: example;
+    animation-duration: 1;
+}
+.page-product .product-item:hover{
+    box-shadow: -1px 3px 22px 6px rgba(92,82,82,0.48);
+}
+.list-product{
+    width: 80%;
+    margin: auto;
+}
+@keyframes zoom{
+    from{scale: 1;}
+    to{scale: 1.5}
+}
+
+.page-product .product-top .product-img img:hover{
+    animation-name: zoom;
+    animation-duration: 1s;
+    scale: 1.5;
+}
+.page-product .product-top .product-img{
+    overflow: hidden;
+}
+@media screen and (max-width: 500px) {
+    .page-product .list-product .product-item.w-22{
+        width: 50%;
+    }
+}
+/* Thiết lập ban đầu cho phần tử */
+
+.minato {
+    margin-top: 100px;
+    margin-left: auto;
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden; /* Để background không vượt ra ngoài phần tử */
+}
+
+/* Tạo background động khi xuất hiện */
+.minato::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    transform: scale(0.8); /* Ban đầu co lại một chút */
+    border-radius: 10px;
+}
+
+/* Hiệu ứng xuất hiện cho background */
+.minato.fade-in::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hiệu ứng fade-in cho tiêu đề */
+.fade-in {
+    opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+    color: #fff;
+}
+
+/* Keyframes cho tiêu đề fade-in */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Di chuyển từ dưới lên */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Đứng yên khi đã xuất hiện */
+    }
+}
+/* Hiệu ứng fade-in cho sản phẩm */
+.page-product .product-item {
+    opacity: 0; /* Ban đầu ẩn */
+    transform: translateY(30px); /* Di chuyển nhẹ xuống */
+    animation: fadeInProduct 1s forwards; /* Thêm animation */
+    animation-delay: 1s; /* Thời gian delay trước khi bắt đầu animation */
+}
+
+/* Keyframes cho hiệu ứng fade-in sản phẩm */
+@keyframes fadeInProduct {
+    to {
+        opacity: 1; /* Xuất hiện hoàn toàn */
+        transform: translateY(0); /* Về vị trí ban đầu */
+    }
+}
+
+/* Tạo hiệu ứng cho tất cả các sản phẩm khi hover */
+.page-product .product-item:hover {
+    box-shadow: -1px 3px 22px 6px rgba(92, 82, 82, 0.48);
+}
+
+.page-product .product-item {
+    animation: fadeInProduct 1s forwards;
+    animation-delay: calc(1s + (var(--i) * 0.1)); /* Tính toán delay dựa trên biến CSS */
+}
+
+/* Thêm biến CSS cho mỗi sản phẩm */
+.page-product .product-item:nth-child(1) { --i: 0; }
+.page-product .product-item:nth-child(2) { --i: 1; }
+.page-product .product-item:nth-child(3) { --i: 2; }
+.page-product .product-item:nth-child(4) { --i: 3; }
+/* Tiếp tục cho đến khi hết số sản phẩm */
+
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+body.dark-mode footer{
+    background-color: red;
+}
+.theme-switch-wrapper{
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -470px;
+    margin-left: 1000px;
+    margin-bottom: -300px;
+    transform: translateX(100px);
+    animation: light 1s forwards;
+    animation-delay: 0.5s;
+}
+.theme-switch{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 44px;
+}
+.theme-switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    background-color: #ffc72b;
+    transition: 0.4s;
+    border-radius: 44px;
+    width: 80px;
+    height: 44px;
+}
+.slider:hover{
+    box-shadow: 0 0 20px rgb(214, 252, 0);
+}
+.slider:before{
+    position: absolute;
+    content: "";
+    width: 36px;
+    height: 36px;
+    left: 4px;
+    bottom: 4px;
+    background-image: url('https://files.oaiusercontent.com/file-qB0YFEXNtpSaQTVSekwrt7f1?se=2024-10-23T13%3A27%3A39Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D278f3c22-a4b2-4818-ba69-f6f9a29a4493.webp&sig=VDmoYXR83aNRECc2YLL22Esq3FCI/ZUj7OIqGL3%2BvHs%3D');
+    transition: 0.4s;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+input:checked + .slider{
+    background-color: #2c0b47;
+}
+input:checked + .slider:hover{
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+input:checked + .slider:before{
+    transform: translateX(36px);
+    background-image: url('https://files.oaiusercontent.com/file-cd5bxznS829pQnyvbVSFk6Oz?se=2024-10-23T13%3A27%3A48Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D344ed41b-127c-4037-aa15-38656b1a2d65.webp&sig=ALXe2twyX0mwYW5grOMca5SDJ7j2vC9jyQEC/0fQGgw%3D');
+    background-size: cover;
+}
+@keyframes  light{
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
