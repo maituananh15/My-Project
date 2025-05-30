@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Super Admin",
+        "address": "Nguyen Thi Dinh, Trung Hoa, Cau Giay",
+        "phone": "0123456789",
+        "email": "admin@example.com",
+        "password": "123",
+        "age": 30,
+        "role": "admin"
+    },
+    {
+        "name": "Mai Tuấn Anh",
+        "address": "Nga Liên, Nga Sơn, Thanh Hóa",
+        "phone": "0986724113",
+        "email": "maituananh@gmail.com",
+        "password": "12341234Az",
+        "age": "20",
+        "role" : "user"
+    }
+]
